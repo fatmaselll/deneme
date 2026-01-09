@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çöp Kutusu - Sipariş Takip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px;">
+            <div>
+                <label class="theme-switch-label">
+                    <input type="checkbox" id="themeSwitch" style="vertical-align:middle;">
+                    <span class="theme-switch-text">🌙 Dark / ☀️ Açık</span>
+                </label>
+            </div>
+            <div style="display:flex;gap:10px;">
+                <button onclick="window.location.href='index.html'" class="trash-btn">Ana Sayfa</button>
+                <button id="emptyTrash" class="trash-btn" style="background:linear-gradient(90deg,#d32f2f 60%,#232b3a 100%);color:#ff5252;">Tüm Çöp Kutusunu Sil</button>
+            </div>
+        </div>
+        <table id="trashTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ad Soyad</th>
+                    <th>Ürün Adı</th>
+                    <th>Toplam Ücret</th>
+                    <th>Ücret Durumu</th>
+                    <th>Sipariş Durumu</th>
+                    <th>Silinme Tarihi</th>
+                    <th>Geri Al</th>
+                    <th>Kalıcı Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Çöp kutusu kayıtları buraya gelecek -->
+            </tbody>
+        </table>
+    </div>
+    <div id="confirmTrashModal" class="modal">
+        <div class="modal-content">
+            <p id="trashModalText">Bu işlemi onaylıyor musunuz?</p>
+            <button id="confirmTrashDelete">Evet</button>
+            <button id="cancelTrashDelete">Hayır</button>
+        </div>
+    </div>
+    <script src="trash.js"></script>
+</body>
+</html>
