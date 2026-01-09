@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipariş Takip Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px;">
+            <div>
+                    <label class="theme-toggle">
+                        <input type="checkbox" id="themeSwitch">
+                        <span class="slider">
+                            <span class="icon sun">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y1="4.22"/></svg>
+                            </span>
+                            <span class="icon moon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+                            </span>
+                        </span>
+                    </label>
+            </div>
+            <button onclick="window.location.href='trash.html'" class="trash-btn">Çöp Kutusu</button>
+        </div>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name">Ad Soyad</label>
+                <input type="text" id="name" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label for="product">Ürün Adı</label>
+                <input type="text" id="product" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label for="price">Toplam Ücret (₺)</label>
+                <input type="number" id="price" required min="0">
+            </div>
+            <div class="form-group">
+                <label for="payment">Ücret Durumu</label>
+                <select id="payment" required>
+                    <option value="Ödendi">Ödendi</option>
+                    <option value="Ödenecek">Ödenecek</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Sipariş Durumu</label>
+                <select id="status" required>
+                    <option value="Kargoya Verildi">Kargoya Verildi</option>
+                    <option value="Kargoya Verilecek">Kargoya Verilecek</option>
+                    <option value="Teslim Edildi">Teslim Edildi</option>
+                </select>
+            </div>
+            <button type="submit">Ekle</button>
+        </form>
+        <div id="maxWarning" class="warning" style="display:none;">Maksimum 100 kayıt eklenebilir!</div>
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ad Soyad</th>
+                    <th>Ürün Adı</th>
+                    <th>Toplam Ücret</th>
+                    <th>Ücret Durumu</th>
+                    <th>Sipariş Durumu</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Siparişler buraya gelecek -->
+            </tbody>
+        </table>
+    </div>
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p>Kaydı silmek istediğinize emin misiniz?</p>
+            <button id="confirmDelete">Evet</button>
+            <button id="cancelDelete">Hayır</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <footer class="footer">
+        <div>© 2026 Sipariş Takip Sistemi | Tasarım: miasmavi & deha</div>
+    </footer>
+</body>
+</html>
